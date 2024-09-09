@@ -1,0 +1,158 @@
+1.What are the two values of the Boolean data type? How do you write them?
+
+True and False
+They are used to represent truth values and are commonly used in conditional statements, logical operations, and control flow.
+
+2. What are the three different types of Boolean operators?
+
+and: Returns True if all operands are True.
+or: Returns True if at least one operand is True.
+not: Inverts the Boolean value of the operand.
+
+3. Make a list of each Boolean operators truth tables (i.e. every possible combination of Boolean
+values for the operator and what it evaluate ).
+
+	1. Logical AND (and)The and operator evaluates to True only if both operands are True. Otherwise, it evaluates to False.
+
+	Operand A	Operand B	A and B
+	True		True		True
+	True		False		False
+	False		True		False
+	False		False		False
+	
+	2. Logical OR (or)The or operator evaluates to True if at least one of the operands is True. It evaluates to False only if both operands are False.
+
+	Operand A	Operand B	A or B
+	True		True		True
+	True		False		True
+	False		True		True
+	False		False		False
+
+	3. Logical NOT (not)The not operator inverts the Boolean value of its operand. If the operand is True, not makes it False, and vice versa.
+
+	Operand A	not A
+	True		False
+	False		True
+
+
+4. What are the values of the following expressions?
+	(5 > 4) and (3 == 5) ---> False
+	not (5 > 4)          ---> False
+	(5 > 4) or (3 == 5)  ---> True
+	not ((5 > 4) or (3 == 5))  ---> False
+	(True and True) and (True == False)  ---> False
+	(not False) or (not True) ---> True
+
+5. What are the six comparison operators?
+	
+	> (Greater than)
+	< (less than)
+	>= (greater than or equal to)
+	<= (less than or equal to)
+	== (equal to)
+	!= (not equal to)
+
+6. How do you tell the difference between the equal to and assignment operators?Describe a condition and when you would use one.
+
+	Use == to compare values for equality.
+	a = 10
+	b = 20
+	print(a == b)  # Output: False, because 10 is not equal to 20
+
+	Use = to assign values to variables.
+	x = 5 
+
+
+
+7. Identify the three blocks in this code:
+
+spam = 0
+if spam == 10:
+    print('eggs')
+if spam > 5:
+    print('bacon')
+else:
+    print('ham')
+print('spam')
+print('spam')
+
+Block 1: Executes if spam is 10. It prints eggs.
+Block 2: Contains an if-else structure. It prints bacon if spam is greater than 5, otherwise it prints ham.
+Block 3: Contains two print statements that will always execute, printing spam twice.
+
+so,spam==0
+it print
+ham
+spam
+spam
+
+
+8. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints
+Greetings! if anything else is stored in spam.
+
+spam =0 
+if spam ==1:
+	print('Hello')
+elif spam == 2:
+	print('howdy')
+else:
+	
+	print('Greetings')
+
+if spam == 1: Checks if spam is equal to 1. If true, it prints 'Hello'.
+elif spam == 2: If the first condition is false, this checks if spam is equal to 2. If true, it prints 'Howdy'.
+else: If neither of the above conditions is true, it prints 'Greetings!'.
+
+
+9.If your programme is stuck in an endless loop, what keys you’ll press?
+
+	Ctrl + C is the most common and widely used key combination to stop a program stuck in an endless loop.
+	Ctrl + Break or Ctrl + Pause may be used in certain contexts or older systems.
+These actions will usually terminate the current running process, allowing you to regain control of your terminal or development environment.
+
+10. How can you tell the difference between break and continue?
+
+	break: Exits the entire loop, terminating it completely.
+	continue: Skips the remaining code inside the current iteration and proceeds to the next iteration of the loop.
+
+	Understanding when to use each statement helps in controlling the flow of loops effectively, allowing for more precise handling of loop conditions 	and iterations.
+
+
+11. In a for loop, what is the difference between range(10), range(0, 10), and range(0, 10, 1)?
+
+	-- range(10): Starts at 0, ends before 10, with a step of 1. (Default start and step values)
+	-- range(0, 10): Starts at 0, ends before 10, with a step of 1. (Explicit start value)
+	-- range(0, 10, 1): Starts at 0, ends before 10, with a step of 1. (Explicit start and step values)
+
+
+12. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalentprogram that prints the numbers 1 to 10 using a while loop.
+
+# Using a for loop
+for i in range(1, 11):
+    print(i)
+
+# Using a while loop
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
+13. If you had a function named bacon() inside a module named spam, how would you call it after importing spam?
+
+# spam.py
+def bacon():
+    print("Bacon function called!")
+
+
+import spam
+spam.bacon()
+
+
+
+
+
+
+
+
+
+
