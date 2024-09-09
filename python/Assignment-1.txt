@@ -1,0 +1,87 @@
+1. In the below elements which of them are values or an expression? eg:- values can be
+integer or string and expressions will be mathematical operators.
+
+*    ---- (multiplication)mathematical expression 
+
+'hello'  ------- string value
+
+-87.8  ------ float value
+
+-  --- (subtraction)mathematical expression
+
+/  ---- (division)mathematical expression
+
++  ----- (addition)mathematical expression
+
+6  ----- integer value
+ 
+----------------------------------------------------------------------
+
+2. What is the difference between string and variable?
+
+string - string is fundamental datatype,it is immutable.
+ex:-
+	"hello","python"
+variable - variable is name to store the data,can hold different datatypes.
+ex:-
+	name = 'praveen'
+	age = 18
+
+3. Describe three different data types.
+	
+	list - [],mutable,growable nature,insertion order preserved,allows duplicates
+	ex:- my_list = [1, "hello", 3.5, True]
+	tuple - (),immutable,insertion order preserved,Fixed Size,allows duplicates
+	ex:- my_tuple = (1, "hello", 3.5, True)
+	set - {},mutable,insertion not preserved,Unique Elements,does not allows duplicates
+	ex:- my_set = {1, 2, 3, "hello"}
+
+4. What is an expression made up of? What do all expressions do?
+		
+	- An expression in programming is a combination of values, variables, operators, and function calls that are evaluated to produce a new value.
+	- All expressions are evaluated to produce a result or value.
+
+5. This assignment statements, like spam = 10. What is the difference between an
+expression and a statement?
+
+	- An expression is a combination of values, variables, operators, and function calls that are evaluated to produce a value.
+	- A statement is an instruction that the Python interpreter can execute. It represents an action or command, such as creating a variable, displaying 	  output, or controlling the flow of execution.
+
+
+6. After running the following code, what does the variable bacon contain?
+bacon = 22
+bacon + 1
+
+	bacon = 22
+	print(bacon + 1)
+	bacon = 23
+
+7. What should the values of the following two terms be?
+	'spam' + 'spamspam'  ---> print('spam' + 'spamspam') == spamspamspam
+	spam * 3     	     ---> print('spam' * 3) == spamspamspam
+ 
+
+8. Why is eggs a valid variable name while 100 is invalid?
+
+		In Python (and most programming languages), variable names must follow specific rules for them to be considered valid. Let's look at why 		eggs is a valid variable name while 100 is not.
+
+9. What three functions can be used to get the integer, floating-point number, or string
+version of a value?
+
+The three functions in Python that can be used to convert a value to an integer, floating-point number, or string are:
+
+	int(): Converts to integer.
+	float(): Converts to floating-point number.
+	str(): Converts to string.
+
+
+10. Why does this expression cause an error? How can you fix it?
+
+	print('I have eaten' + 99 + 'burritos')
+	TypeError: can only concatenate str (not "int") to str
+	The expression print('I have eaten' + 99 + 'burritos') causes an error because it attempts to concatenate a string ('I have eaten') with an integer (99)
+
+	print('I have eaten ' + str(99) + ' burritos')
+	The str(99) converts the integer 99 into a string, allowing it to be concatenated with the other strings without causing a type error.
+	
+	
