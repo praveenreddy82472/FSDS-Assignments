@@ -1,0 +1,67 @@
+1. What does an empty dictionary's code look like?
+	
+	d= dict()
+
+
+2. What is the value of a dictionary value with the key foo and the value 42?
+	
+	d= dict()
+	d[foo] = 42
+	print(d) #{foo:42}
+	
+
+3. What is the most significant distinction between a dictionary and a list?
+	
+	d = dict() or {} 
+	it has flower brackets,and key are immutable and values are mutable
+	l = [] 
+	it has square brackets,and it is mutable.
+	
+
+4. What happens if you try to access spam[foo] if spam is {bar: 100}?
+	spam {bar : 100}
+	print(spam[foo]) #it raise the name error	
+
+5. If a dictionary is stored in spam, what is the difference between the expressions cat in spam and
+cat in spam.keys()?
+	
+	spam = {'bar': 100, 'cat': 200}
+	result = 'cat' in spam #True
+		and
+	result = 'cat' in spam.keys() #True
+	cat in spam is generally faster than cat in spam.keys() because the former directly checks the dictionary for the key, while the latter involves 	creating a keys view object.
+	And result was same.
+
+
+6. If a dictionary is stored in spam, what is the difference between the expressions cat in spam and
+cat in spam.values()?
+	cat in spam: Checks if 'cat' is a key in the dictionary.
+	cat in spam.values(): Checks if 'cat' is a value in the dictionary.
+
+
+7. What is a shortcut for the following code?
+if color not in spam:
+spam[color] = black;
+	
+	spam.setdefault(color, 'black')
+
+
+
+8. How do you "pretty print" dictionary values using which module and function?
+
+	from pprint import pprint
+
+	# Example dictionary
+	spam = {'name': 'Praveen', 'age': 23, 'job': 'Engineer', 'languages': ['Python', 'JavaScript'], 'address': {'city': 'Chicago', 'zip': '60194'}}
+
+	# Pretty printing the dictionary
+	pprint(spam)
+
+	
+	{'address': {'city': 'Chicago', 'zip': '60194'},
+	 'age': 23,
+ 	'job': 'Engineer',
+ 	'languages': ['Python', 'JavaScript'],
+ 	'name': 'Praveen'}
+
+

@@ -1,0 +1,74 @@
+1. What are escape characters, and how do you use them?
+
+Escape characters are special characters in strings that allow you to insert characters that are otherwise difficult to include directly, such as newlines, tabs, or quotes. They begin with a backslash (\) followed by a specific character to indicate a special meaning.
+
+Common escape characters include:
+
+\n: Newline
+\t: Tab
+\\: Backslash
+\': Single quote
+\": Double quote
+To use an escape character, place the backslash before the character. For example, "Hello\nWorld" prints "Hello" and "World" on separate lines. Escape characters help in formatting and managing text in strings more effectively.
+
+2. What do the escape characters n and t stand for?
+  \n - newline
+  \t - tab
+
+3. What is the way to include backslash characters in a string?
+
+	backslash - \\
+	path = "C:\\Users\\Praveen\\Documents"
+	print(path)
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the word Howl's not escaped a problem?
+
+	iThe string "Howl's Moving Castle" is a correct value because it is enclosed in double quotes ("), allowing the single quote (') inside the string 	to be used without needing an escape character.
+
+5. How do you write a string of newlines if you don't want to use the n character?
+	
+	s= "praveen\n23"
+	print(s)
+	
+	If you want to write a string with newlines without using the \n character directly, you can use triple quotes (''' or """) in Python. Triple quotes 	allow you to create multi-line strings where each line break is preserved.
+	
+	s="""Prvaeen
+	23"""
+	print(s)
+
+
+6. What are the values of the given expressions?
+Hello, world!'[1]   --> 'e'
+Hello, world!'[0:5] --> 'Hello'
+Hello, world!'[:5]  --> 'Hello'
+Hello, world!'[3:]  --> 'lo,world!'
+
+
+7. What are the values of the following expressions?
+Hello.upper() -->'HELLO'
+Hello.upper().isupper()  -->'True'
+Hello.upper().lower()  -->'hello'
+
+
+8. What are the values of the following expressions?
+'Remember, remember, the fifth of July.'.split() ----> ['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.']
+'-'.join('There can only one.'.split())   ----->  There-can-only-one.
+
+9. What are the methods for right-justifying, left-justifying, and centering a string?
+
+
+text = "hello"
+right_justified = text.rjust(10, '-')  # Pads with '-' to make the total width 10
+print(right_justified)  # Output: '-----hello'
+
+text = "hello"
+left_justified = text.ljust(10, '-')  # Pads with '-' to make the total width 10
+print(left_justified)  # Output: 'hello-----'
+
+text = "hello"
+centered = text.center(10, '-')  # Pads with '-' to make the total width 10
+print(centered)  # Output: '--hello---'
+
+10. What is the best way to remove whitespace characters from the start or end?
+
+	strip() -->Removes whitespace from both the start and end.
