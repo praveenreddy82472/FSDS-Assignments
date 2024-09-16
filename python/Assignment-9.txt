@@ -1,0 +1,54 @@
+1. To what does a relative path refer?
+
+	A relative path refers to the location of a file or directory relative to the current working directory of the program or environment. It is a 	shorthand path that doesn't start from the root directory of the filesystem but instead is based on the position of the current directory you're 	working in.
+	Key Points:
+	Relative Path: Specifies a file or directory by starting from the current directory (rather than the root directory).
+	Current Working Directory: The directory where the program is currently running.
+	Symbols:
+	. refers to the current directory.
+	.. refers to the parent directory (one level up).
+
+2. What does an absolute path start with your operating system?
+	
+	An absolute path starts from the root directory of your operating system and specifies the full path to a file or directory. 
+	Example: C:\Users\user\Documents\file.txt
+
+3. What do the functions os.getcwd() and os.chdir() do?
+
+	OS.getcwd -- get cureentworking directory
+	os.chdir -- changeDirectory
+
+4. What are the . and .. folders?
+	
+	. refer to current directory
+	.. refer to parent directory
+
+5. In C:\bacon\eggs\spam.txt, which part is the dir name, and which part is the base name?
+
+	Directory Path: C:\bacon\eggs
+	Base Name: spam.txt
+
+
+6. What are the three “mode” arguments that can be passed to the open() function?
+	
+	f = open('filename', 'r')  # Opens the file in read mode
+	f = open('filename', 'w')  # Opens the file in write mode
+	f = open('filename', 'a')  # Opens the file in append mode
+
+7. What happens if an existing file is opened in write mode?
+
+	When an existing file is opened in write mode ('w'), the following happens:
+
+	File Truncation: The file is truncated, meaning that its contents are cleared. All existing data in the file is removed.
+	New Data: Any new data you write to the file will replace the old data. The file will only contain the new data you write, as the previous content 	has been erased.
+	
+8. How do you tell the difference between read() and readlines()?
+
+	Use read() when you need the whole file content as a single string.
+	Use readlines() when you need to process the file line by line.
+
+9. What data structure does a shelf value resemble?
+
+	A shelf is a dictionary-like object with the added feature of persistence, allowing you to save and load data from a file on disk.
+
+	

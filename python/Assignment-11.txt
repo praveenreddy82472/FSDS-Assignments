@@ -1,0 +1,103 @@
+1. Create an assert statement that throws an AssertionError if the variable spam is a negative
+integer.
+
+	spam = -5
+	assert spam >= 0,"Assertion Error:it is a Neagtive Number"
+
+2. Write an assert statement that triggers an AssertionError if the variables eggs and bacon contain
+strings that are the same as each other, even if their cases are different (that is, 'hello' and 'hello' are
+considered the same, and 'goodbye' and 'GOODbye' are also considered the same).
+
+eggs= 'hello'
+bacon= 'hello'
+assert eggs == bacon,"AssertionError:Both are not same"
+
+eggs= 'goodbye'
+bacon= 'GOODbye'
+assert eggs == bacon,"AssertionError:Both are not same"
+
+eggs = 'Hello'  # Example value, change this to test different cases
+bacon = 'hello'  # Example value, change this to test different cases
+
+# Assert statement to check if 'eggs' and 'bacon' are the same ignoring case
+assert eggs.lower() != bacon.lower(), "AssertionError: 'eggs' and 'bacon' contain the same string (case insensitive)"
+
+
+
+3. Create an assert statement that throws an AssertionError every time.
+
+	assert False, "This assertion always fails and throws an AssertionError"
+	
+4. What are the two lines that must be present in your software in order to call logging.debug()?
+
+	import logging
+
+	# Configure logging to capture debug messages
+	logging.basicConfig(level=logging.DEBUG)
+
+	# Example of using logging.debug
+	logging.debug('This is a debug message')
+
+
+5. What are the two lines that your program must have in order to have logging.debug() send a
+logging message to a file named programLog.txt?
+	
+	import logging
+
+	# Configure logging to capture debug messages
+	logging.basicConfig(filename='programLog.txt',level=logging.DEBUG)
+
+	# Example of using logging.debug
+	logging.debug('This is a debug message')
+
+	
+	
+6. What are the five levels of logging?
+
+	DEBUG: Detailed debug information.
+	INFO: General informational messages.
+	WARNING: Warnings about potential issues.
+	ERROR: Errors that impact functionality.
+	CRITICAL: Severe errors that may halt the application.
+
+7. What line of code would you add to your software to disable all logging messages?
+
+	import logging
+
+	# Disable all logging messages
+	logging.disable(logging.CRITICAL)
+
+	# Example logging calls (these will be ignored)
+	logging.debug('This is a debug message')
+	logging.info('This is an info message')
+	logging.warning('This is a warning message')
+	logging.error('This is an error message')
+	logging.critical('This is a critical message')
+
+
+8.Why is using logging messages better than using print() to display the same message?
+
+	logging provides a structured, flexible, and configurable approach to managing output messages, which is especially valuable in production 	environments and for long-term maintenance and monitoring.
+
+9. What are the differences between the Step Over, Step In, and Step Out buttons in the debugger?
+
+	Step Over: Executes the current line and moves to the next line, skipping over function calls.
+	Step In: Executes the current line and steps into any called function or method.
+	Step Out: Completes the execution of the current function or method and returns to the calling code.
+
+10.After you click Continue, when will the debugger stop ?
+
+	Clicking Continue in the debugger resumes execution of the program and will stop when any of the above conditions are met, allowing you to further 	analyze or modify the program’s execution flow.
+
+
+11. What is the concept of a breakpoint?
+
+	A breakpoint is a tool in debugging that allows you to pause the execution of a program at a specific line of code. This helps you inspect the 	program's state, understand its behavior, and diagnose issues more effectively.
+
+
+
+
+
+
+
+	

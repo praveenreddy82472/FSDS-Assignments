@@ -1,0 +1,55 @@
+1. How do you distinguish between shutil.copy() and shutil.copytree()?
+
+	Use shutil.copy() to copy individual files.
+	Use shutil.copytree() to copy entire directories, including all files and subdirectories.
+
+2. What function is used to rename files??
+	
+	import os
+	os.rename(): Used to rename files or directories.
+
+3. What is the difference between the delete functions in the send2trash and shutil modules?
+
+	Use send2trash if you want to provide a way to recover files or directories after deletion.
+	Use os.remove() or shutil.rmtree() if you need to permanently delete files or directories without recovery options.
+
+4.ZipFile objects have a close() method just like File objects’ close() method. What ZipFile method is
+equivalent to File objects’ open() method?
+
+	The ZipFile() constructor is used to open a ZIP file, similar to how the open() function is used to open a regular file.
+	After opening a ZIP file with ZipFile(), you can use its methods to interact with the contents of the ZIP archive.
+	
+5. Create a programme that searches a folder tree for files with a certain file extension (such as .pdf
+or .jpg). Copy these files from whatever location they are in to a new folder.
+
+
+
+import os
+import shutil
+
+def copy_files_with_extension(src_folder, dest_folder, extension):
+    """
+    Searches for files with a certain extension in the src_folder and copies them to dest_folder.
+
+    :param src_folder: The source directory to search in.
+    :param dest_folder: The destination directory to copy files to.
+    :param extension: The file extension to search for (e.g., '.pdf', '.jpg').
+    """
+    if not os.path.exists(dest_folder):
+        os.makedirs(dest_folder)  # Create the destination directory if it doesn't exist
+
+    # Walk through the directory tree
+    for root, dirs, files in os.walk(src_folder):
+        for file in files:
+            if file.lower().endswith(extension):
+                src_path = os.path.join(root, file)
+                dest_path = os.path.join(dest_folder, file)
+                shutil.copy(src_path, dest_path)
+                print(f"Copied {src_path} to {dest_path}")
+
+# Example usage
+source_folder = 'path/to/source_folder'
+destination_folder = 'path/to/destination_folder'
+file_extension = '.pdf'  # Change to the desired file extension
+
+copy_files_with_extension(source_folder, destination_folder, file_extension)
