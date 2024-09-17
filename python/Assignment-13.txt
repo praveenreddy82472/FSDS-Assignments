@@ -1,0 +1,58 @@
+1. What advantages do Excel spreadsheets have over CSV spreadsheets?
+
+Excel spreadsheets offer several advantages over CSV spreadsheets:
+
+Formatting: Excel supports cell formatting, such as font styles, colors, and borders, which CSV does not.
+Formulas: Excel allows complex calculations and formulas directly within the spreadsheet.
+Multiple Sheets: Excel can handle multiple sheets within a single file, whereas CSV is limited to a single sheet.
+Data Validation: Excel provides tools for data validation, drop-down lists, and error checking.
+Charts and Graphs: Excel offers advanced charting and graphing capabilities for visual data analysis.
+Macros: Excel supports macros for automating repetitive tasks.
+
+
+2.What do you pass to csv.reader() and csv.writer() to create reader and writer objects?
+
+csv.reader(file): Reads from the CSV file object and allows iteration over rows.
+csv.writer(file): Writes to the CSV file object and allows writing rows of data.
+
+3. What modes do File objects for reader and writer objects need to be opened in?
+
+For csv.reader:
+Mode: Read mode ('r').
+Purpose: To read data from the CSV file.
+
+Mode: Write mode ('w'), or append mode ('a').
+Purpose: To write data to the CSV file. newline='' is typically used to avoid extra blank lines.
+
+4. What method takes a list argument and writes it to a CSV file?
+
+import csv
+
+# Open a CSV file in write mode
+with open('file.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    
+    # Write a list as a single row to the CSV file
+    writer.writerow(['Header1', 'Header2', 'Header3'])
+    
+    # Write another list as a row
+    writer.writerow(['Value1', 'Value2', 'Value3'])
+
+
+5. What do the keyword arguments delimiter and line terminator do?
+
+delimiter: Sets the character that separates fields in the CSV file.
+lineterminator: Sets the character(s) used to terminate each line (row) in the CSV file.
+
+6. What function takes a string of JSON data and returns a Python data structure?
+
+json.loads(json_string): Parses the JSON string json_string and returns the corresponding Python data structure, such as a dictionary or list.
+
+7. What function takes a Python data structure and returns a string of JSON data?
+
+json.dumps(data): Converts the Python data structure data (e.g., dictionary, list) into a JSON-formatted string.
+
+
+
+
+

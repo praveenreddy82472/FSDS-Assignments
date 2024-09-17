@@ -1,0 +1,133 @@
+1. What does RGBA stand for?
+
+RGBA - RED-GREEN-BLUE-ALPHA
+
+2. From the Pillow module, how do you get the RGBA value of any images?
+
+from PIL import Image
+
+# Open the image
+img = Image.open(r'C:\Users\tumat\OneDrive\Desktop\Praveen (2).jpeg')
+
+# Convert the image to RGBA mode (if it’s not already)
+img = img.convert('RGBA')
+
+# Get the RGBA value of a pixel at coordinates (x, y)
+x, y = 10, 10  # Example coordinates
+rgba_value = img.getpixel((x, y))
+
+print(rgba_value) 
+
+3. What is a box tuple, and how does it work?
+
+A box tuple is used to specify a rectangular area within an image by providing coordinates for its edges. It is commonly used in operations like cropping, resizing, or pasting within images.
+
+from PIL import Image
+
+# Open an image
+img = Image.open('example.png')
+
+# Define a box tuple (left, upper, right, lower)
+box = (50, 50, 200, 200)
+
+# Crop the image using the box tuple
+cropped_img = img.crop(box)
+
+# Save or display the cropped image
+cropped_img.save('cropped_example.png')
+
+
+4. Use your image and load in notebook then, How can you find out the width and height of an
+Image object?
+
+from PIL import Image
+
+# Open the image
+img = Image.open(r'C:\Users\tumat\OneDrive\Desktop\Praveen (2).jpeg')
+
+# Get the size of the image
+width, height = img.size
+
+# Print the width and height
+print(f'Width: {width}')
+print(f'Height: {height}')
+
+
+5. What method would you call to get Image object for a 100×100 image, excluding the lower-left
+quarter of it?
+
+from PIL import Image
+
+# Open the image
+img = Image.open(r'C:\Users\tumat\OneDrive\Desktop\Praveen (2).jpeg')
+
+# Define the box tuple for the upper-right quarter
+box = (50, 0, 100, 50)
+
+# Crop the image to get the desired region
+cropped_img = img.crop(box)
+
+# Save or display the cropped image
+cropped_img.save('cropped_image.png')
+
+
+
+
+6. After making changes to an Image object, how could you save it as an image file?
+
+from PIL import Image
+
+# Open the image
+img = Image.open(r'C:\Users\tumat\OneDrive\Desktop\Praveen (2).jpeg')
+
+# Make some changes (e.g., cropping, resizing, or applying filters)
+# For demonstration, let's convert the image to grayscale
+img = img.convert('L')
+
+# Save the modified image to a new file
+img.save('modified_image.png')
+
+
+7. What module contains Pillow’s shape-drawing code?
+
+from PIL import Image, ImageDraw
+
+# Create a new image with a white background
+img = Image.new('RGB', (200, 200), color='white')
+
+# Create a drawing context
+draw = ImageDraw.Draw(img)
+
+# Draw a red rectangle
+draw.rectangle([50, 50, 150, 150], outline='red', width=3)
+
+# Draw a blue ellipse
+draw.ellipse([50, 50, 150, 150], outline='blue', fill='lightblue')
+
+# Save the image
+img.save('shapes.png')
+
+
+
+8. Image objects do not have drawing methods. What kind of object does? How do you get this kind
+of object?
+
+from PIL import Image, ImageDraw
+
+# Create a new image with white background
+image = Image.new('RGB', (200, 200), (255, 255, 255))
+
+# Initialize ImageDraw
+draw = ImageDraw.Draw(image)
+
+# Draw a rectangle
+draw.rectangle([(50, 50), (150, 150)], outline="black", fill="blue")
+
+# Draw some text
+draw.text((60, 60), "Praveen", fill="red")
+
+# Save the image
+image.save('example_with_drawings.png')
+
+# Optionally, show the image
+image.show()
