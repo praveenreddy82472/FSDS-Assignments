@@ -1,0 +1,77 @@
+1. What is the result of the code, and explain?
+
+
+>>> X = 'iNeuron'
+>>> def func():
+	print(X)
+>>> func()
+
+The Result was 'Ineuron'.X variable is global variable 
+Inside the func() function, there is a print(X) statement. Since X is not defined within the function, Python looks for a variable named X in the global scope.
+The global variable X holds the value 'iNeuron'. When func() is called, Python successfully finds X in the global scope and prints 'iNeuron'.
+
+
+
+2. What is the result of the code, and explain?
+
+
+>>> X = 'iNeuron'
+>>> def func():
+	X = 'NI!'
+>>> func()
+>>> print(X)
+
+The Result was 'Ineuron' and 'Ineuron'.Here outside the function have global variable and inside the function local variable.in func() function we declare the variable but we not print or return that one.so when call func() nothing can print,but the print(X) return the global variable because it is outside of the function. 
+
+3. What does this code print, and why?
+
+>>> X = 'iNeuron'
+>>> def func():
+	X = 'NI'
+	print(X)
+>>> func()
+>>> print(X)
+
+The Result was 'NI!' and 'Ineuron'.Here outside the function have global variable and inside the function local variable present
+while calling the func() the local variable printed and print(X) is outside of the function.so,global variable printed.
+
+
+4. What output does this code produce? Why?
+
+
+>>> X = 'iNeuron'
+>>> def func():
+	global X
+	X = 'NI'
+>>> func()
+>>> print(X)
+
+the result was 'NI'.Because inside the function  Variable of X declared the Global keyword.so that represents the global.then we call the variable of X it print inside function value. 
+
+5. What about this code—what’s the output, and why?
+
+
+>>> X = 'iNeuron'
+>>> def func():
+	X = 'NI'
+	def nested():
+	print(X)
+	nested()
+>>> func()
+>>> X
+
+The resulut was 'NI' .Here We use the nested function,func() variable of X is declared in the nested().then func() return first and then X is not printed there that why it not print anything.
+
+6. How about this code: what is its output in Python 3, and explain?
+
+
+>>> def func():
+	X = 'NI'
+	def nested():
+	nonlocal X
+	X = 'Spam'
+	nested()
+	print(X)
+>>> func()
+
+The output of the code is Spam because the nonlocal declaration allows nested() to modify the X variable in the enclosing scope of func(), and this updated value is printed afterwards.

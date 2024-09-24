@@ -1,0 +1,52 @@
+1)What is the difference between enclosing a list comprehension in square brackets and
+parentheses?
+
+The difference between enclosing a list comprehension in square brackets and parentheses lies in the type of collection created:
+
+Square Brackets []: A list comprehension produces a list. For example:
+
+my_list = [x * 2 for x in range(5)]
+
+This creates a list: [0, 2, 4, 6, 8].
+
+Parentheses (): A list comprehension enclosed in parentheses creates a generator expression. For example:
+my_gen = (x * 2 for x in range(5))
+This creates a generator object, which produces items on-the-fly and is more memory efficient.
+
+In summary, square brackets create a list, while parentheses create a generator.
+
+2) What is the relationship between generators and iterators?
+
+Generators and iterators are closely related concepts in Python:
+
+Iterators: An iterator is an object that implements the iterator protocol, consisting of the __iter__() and __next__() methods, allowing traversal through a collection (e.g., lists, tuples).
+
+Generators: A generator is a special type of iterator created using a function with the yield keyword. When called, it returns a generator object that produces values one at a time, maintaining its state between calls.
+
+Summary:
+Generators are a type of iterator: All generators are iterators, but not all iterators are generators.
+Memory Efficiency: Generators are more memory-efficient since they yield items one at a time instead of storing the entire collection in memory.
+
+3) What are the signs that a function is a generator function?
+
+A function is identified as a generator function by the following signs:
+
+Use of the yield Keyword: Instead of return, a generator function uses yield to produce a value. When called, it returns a generator object without executing the function body.
+
+State Preservation: When a generator function is called, it retains its state between successive calls. This allows it to continue execution from where it left off each time next() is called.
+
+Produces Values Lazily: Generator functions produce values one at a time and only as needed (on demand), which makes them memory efficient for large datasets or infinite sequences.
+
+Can be Iterated: A generator function can be used in a for loop or passed to functions that consume iterators, such as list(), sum(), or next().
+
+
+4) What is the purpose of a yield statement?
+
+The yield statement in Python is used within a function to make it a generator function. Its primary purpose is to produce a value and pause the function's execution, allowing the state of the function to be preserved. When the function is called again, it resumes from the point where it last yielded a value, rather than starting over. This enables the function to generate a series of values over time, rather than returning a single result at once. Consequently, yield facilitates lazy evaluation, making it memory-efficient for handling large datasets or infinite sequences without storing them all at once.
+
+
+5) What is the relationship between map calls and list comprehensions? Make a comparison and
+contrast between the two.
+
+
+Both map calls and list comprehensions transform iterables, but list comprehensions offer greater readability and flexibility, while map can be more efficient for larger datasets due to its lazy evaluation nature.

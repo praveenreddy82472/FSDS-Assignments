@@ -1,0 +1,139 @@
+1. Add the current date to the text file today.txt as a string.
+
+from datetime import datetime
+
+# Get the current date as a string
+current_date = datetime.now().strftime("%Y-%m-%d")
+
+# Open the file in append mode and write the current date
+with open('today.txt', 'a') as file:
+    file.write(current_date + '\n')
+
+print("Current date added to today.txt")
+
+
+
+2. Read the text file today.txt into the string today_string
+
+with open('today.txt', 'r') as file:
+    toady_string = file.read()
+
+    print(toady_string)
+
+
+3. Parse the date from today_string.
+
+from datetime import datetime
+
+# Assuming today_string contains the date string (e.g., '2024-09-24')
+today_string = '2024-09-24'  # Example date, you can replace this with the actual content read from the file
+
+# Parse the date string into a datetime object
+parsed_date = datetime.strptime(today_string.strip(), '%Y-%m-%d')
+
+# Output the parsed date
+print("Parsed date:", parsed_date)
+
+
+4. List the files in your current directory
+
+import os
+
+# List all files in the current directory
+files_in_directory = os.listdir()
+
+print("Files in the current directory:")
+for file in files_in_directory:
+    print(file)
+
+
+5. Create a list of all of the files in your parent directory (minimum five files should be available).
+
+import os
+
+# Get the parent directory using '..'
+parent_directory = os.path.abspath(os.path.join(os.getcwd(), '..'))
+
+# List all files and directories in the parent directory
+files_in_parent_directory = os.listdir(parent_directory)
+
+# Filter only files (ignoring directories)
+files_only = [f for f in files_in_parent_directory if os.path.isfile(os.path.join(parent_directory, f))]
+
+# Print the list of files
+print("Files in the parent directory:")
+for file in files_only[:5]:  # Limit to at least five files
+    print(file)
+
+
+6. Use multiprocessing to create three separate processes. Make each one wait a random number of
+seconds between one and five, print the current time, and then exit.
+
+
+import multiprocessing
+import time
+import random
+from datetime import datetime
+
+# Function to be executed by each process
+def process_task():
+    wait_time = random.randint(1, 5)  # Wait between 1 and 5 seconds
+    time.sleep(wait_time)  # Sleep for the random amount of time
+    print(f"Process {multiprocessing.current_process().name} waited {wait_time} seconds and finished at {datetime.now()}")
+
+if __name__ == "__main__":
+    # Create three separate processes
+    processes = []
+
+    for i in range(3):
+        process = multiprocessing.Process(target=process_task, name=f"Process-{i+1}")
+        processes.append(process)
+        process.start()
+
+    # Wait for all processes to complete
+    for process in processes:
+        process.join()
+
+    print("All processes have completed.")
+
+
+
+7. Create a date object of your day of birth.
+
+from datetime import date
+
+# Create a date object for your day of birth (YYYY, MM, DD format)
+date_of_birth = date(2001, 4, 18).day  # Replace with your actual birth date
+
+# Print the date of birth
+print("Day of birth:", date_of_birth)
+
+
+8. What day of the week was your day of birth?
+
+from datetime import date
+
+# Create a date object for your day of birth (YYYY, MM, DD format)
+date_of_birth = date(2001, 4, 18).weekday() # Replace with your actual birth date
+
+# Print the date of birth
+print("week of birth:", date_of_birth)
+
+
+9. When will you be (or when were you) 10,000 days old?
+
+from datetime import date, timedelta
+
+# Your date of birth (replace with your actual birth date)
+date_of_birth = date(2001,4,18)  # Example birth date
+
+# Create a timedelta of 10,000 days
+days_to_10000 = timedelta(days=10000)
+
+# Calculate the date when you'll be 10,000 days old
+date_10000_days_old = date_of_birth + days_to_10000
+
+# Print the result
+print("You will be (or were) 10,000 days old on:", date_10000_days_old)
+
+

@@ -1,0 +1,108 @@
+1. What is the relationship between def statements and lambda expressions ?
+
+def Statements: Used for defining complete functions, suitable for more complex logic and features like decorators.
+lambda Expressions: Used for quick, inline functions, suitable for simple expressions and commonly used with functional programming tools in Python.
+
+
+2. What is the benefit of lambda?
+
+
+ lambda functions enhance code readability and efficiency, especially for short, simple operations, while promoting a functional programming style.
+
+3. Compare and contrast map, filter, and reduce.
+
+Comparison of map, filter, and reduce:
+
+Purpose:
+
+map applies a given function to all items in an iterable, returning a new iterable of the results.
+filter applies a function to each item in an iterable and returns only those items that evaluate to True.
+reduce (from the functools module) cumulatively applies a function to the items of an iterable, reducing it to a single value.
+Output:
+
+map returns a transformed iterable of the same length as the input.
+filter returns an iterable containing only the filtered elements, which can be shorter than the input.
+reduce returns a single value that represents the cumulative result of applying the function.
+Usage:
+
+map is useful for transforming data.
+filter is used for extracting specific data based on a condition.
+reduce is suitable for aggregating data into a summary result.
+These functions enhance code clarity and promote functional programming paradigms in Python
+
+4. What are function annotations, and how are they used?
+
+Function annotations are a way to attach metadata to function parameters and return values in Python. They provide a way to indicate the expected types of arguments and the return type, improving code readability and enabling better tooling support.
+
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+
+
+5. What are recursive functions, and how are they used?
+
+Recursive functions are functions that call themselves in order to solve a problem. They are typically used to break down complex problems into simpler subproblems, leveraging the principle of divide and conquer. A recursive function consists of two main components:
+
+Base Case: This is the condition under which the function stops calling itself, preventing infinite recursion and allowing the function to return a result.
+
+Recursive Case: This is the part of the function where it calls itself with modified arguments, moving closer to the base case.
+
+Usage:
+Recursive functions are often used for problems that can be defined in terms of smaller instances of themselves, such as:
+
+Mathematical Computations: Calculating factorials, Fibonacci numbers, or powers of a number.
+Data Structures: Traversing trees or graphs (e.g., depth-first search).
+Dynamic Programming: Solving problems like the knapsack problem, where the solution can be built from solutions to smaller subproblems.
+
+
+
+6. What are some general design guidelines for coding functions?
+
+
+Here are some general design guidelines for coding functions to ensure clarity, maintainability, and efficiency:
+
+Single Responsibility:
+
+Each function should have a single purpose or responsibility. This makes it easier to understand, test, and reuse.
+Descriptive Naming:
+
+Use clear and descriptive names that convey the function’s purpose. Avoid vague names like doSomething. Instead, use names like calculateTotalPrice.
+Consistent Parameter Usage:
+
+Keep the number of parameters to a minimum. If a function has too many parameters, consider using a dictionary or a class to encapsulate related data.
+Default Values and Keyword Arguments:
+
+Use default parameter values to simplify function calls. Consider using keyword arguments for better readability when calling functions with multiple parameters.
+Documentation:
+
+Write clear docstrings that describe the function’s purpose, parameters, return values, and any exceptions raised. This aids understanding and usage by others (and your future self).
+Avoid Side Effects:
+
+Functions should ideally not modify global variables or the state of mutable objects unless necessary. This makes functions predictable and easier to test.
+Error Handling:
+
+Handle potential errors gracefully using exceptions. Provide informative error messages to help with debugging.
+Limit Complexity:
+
+Keep functions simple and avoid deep nesting. If a function is getting too complex, consider breaking it down into smaller functions.
+Testing:
+
+Write unit tests for your functions to verify their behavior. This helps catch bugs early and ensures that changes do not break existing functionality.
+Performance Considerations:
+
+Optimize functions for performance only when necessary. Focus first on clarity and correctness; optimize later if performance issues arise.
+By following these guidelines, you can create functions that are easier to understand, maintain, and test, ultimately leading to better code quality.
+
+7. Name three or more ways that functions can communicate results to a caller.
+
+
+
+Functions can communicate results to a caller in the following ways:
+
+Return Values: Functions can return a value using the return statement, providing the caller with the computed result.
+
+Output Parameters: Functions can modify mutable objects (like lists or dictionaries) passed as parameters, allowing the caller to access updated values.
+
+Exceptions: Functions can raise exceptions to signal errors or exceptional conditions, which the caller can handle appropriately.
+
+Print Statements: Functions can output results directly to the console using print(), though this is less formal than other methods and generally not recommended for returning results.
+

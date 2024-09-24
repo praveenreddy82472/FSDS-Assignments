@@ -1,0 +1,71 @@
+1. What is the result of the code, and why?
+>>> def func(a, b=6, c=8):
+	print(a, b, c)
+>>>func(1, 2)
+
+The result was 1 2 8.here we have there variable a,b,c. B and C have default variables.when calling the function,given the parameter to the value a for b and c it is optional we can over write also.
+
+
+2. What is the result of this code, and why?
+>>>def func(a, b, c=5):
+	print(a, b, c)
+>>>func(1, c=3, b=2)
+
+
+The output of the code is 1 2 3 because:
+
+a is assigned 1,
+b is assigned 2, and
+c is assigned 3 based on the keyword argument provided. The parameters are printed in the order they were defined in the function
+
+
+3. How about this code: what is its result, and why?
+>>>def func(a, *pargs):
+	print(a, pargs)
+>>>func(1, 2, 3)
+
+
+The output of the code is 1 (2, 3) because:
+
+a is assigned the value 1, and
+pargs captures the remaining arguments as a tuple (2, 3). Thus, it prints 1 followed by the tuple containing the additional arguments.
+
+4. What does this code print, and why?
+>>>def func(a, **kargs):
+	print(a, kargs)
+>>>func(a=1, c=3, b=2)
+
+The output of the code is 1 {'c': 3, 'b': 2} because:
+
+a is assigned the value 1, and
+kargs captures the additional keyword arguments as a dictionary {'c': 3, 'b': 2}. Thus, it prints the value of a followed by the dictionary containing the keyword arguments.
+
+
+5. What gets printed by this, and explain?
+>>>def func(a, b, c=8, d=5): 
+	print(a, b, c, d)
+>>>func(1, *(5, 6))
+
+The output of the code is 1 5 8 6 because:
+
+a is assigned 1,
+b is assigned 5,
+c retains its default value of 8, and
+d is assigned 6 from the unpacked tuple. Thus, the values are printed in the order of the parameters defined in the function.
+
+6. what is the result of this, and explain?
+>>>def func(a, b, c):
+	a = 2; 
+	b[0] = 'x';
+	c['a'] = 'y'
+>>>l=1; m=[1]; n={'a":0}
+>>>func(l, m, n)
+
+>>>>l, m, n
+
+
+The output (1, ['x'], {'a': 'y'}) is produced because:
+
+The local variable a does not affect l.
+The list m is modified directly, and
+The dictionary n is also modified directly.
