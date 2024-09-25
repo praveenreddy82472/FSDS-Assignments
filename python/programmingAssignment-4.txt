@@ -1,0 +1,152 @@
+1. Write a Python Program to Find the Factorial of a Number?
+
+def factorial_numbers(x):
+    if x == 1:
+        return 0
+    else:
+        result = 1
+        for i in range(1, x + 1):
+            result *= i
+        print(f'Factorail of a {x}:', result)
+
+factorial_numbers(5)
+
+2. Write a Python Program to Display the multiplication Table?
+
+n = int(input('enter the number'))
+for i in range(1,10+1):
+    res= n * i
+    print(f'Result {n} * {i} is {res}')
+
+3. Write a Python Program to Print the Fibonacci sequence?
+
+
+def fibonacci_sequence(n):
+    # Initialize the first two Fibonacci numbers
+    fib_sequence = [0, 1]
+
+    # Generate Fibonacci sequence
+    for i in range(2, n):
+        next_fib = fib_sequence[i - 1] + fib_sequence[i - 2]
+        fib_sequence.append(next_fib)
+
+    return fib_sequence[:n]
+
+
+def main():
+    try:
+        # Get the number of terms from the user
+        num_terms = int(input("Enter the number of terms for the Fibonacci sequence: "))
+
+        if num_terms <= 0:
+            print("Please enter a positive integer.")
+        else:
+            # Print the Fibonacci sequence
+            result = fibonacci_sequence(num_terms)
+            print("Fibonacci sequence:")
+            print(result)
+    except ValueError:
+        print("Please enter a valid integer.")
+
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+4. Write a Python Program to Check Armstrong Number?
+
+
+def is_armstrong_number(num):
+    # Convert the number to a string to easily iterate over digits
+    str_num = str(num)
+    num_digits = len(str_num)  # Number of digits
+    sum_of_powers = sum(int(digit) ** num_digits for digit in str_num)  # Calculate sum of powers
+
+    return sum_of_powers == num  # Check if the sum equals the original number
+
+def main():
+    try:
+        # Get input from the user
+        number = int(input("Enter a number: "))
+        
+        # Check if the number is an Armstrong number
+        if is_armstrong_number(number):
+            print(f"{number} is an Armstrong number.")
+        else:
+            print(f"{number} is not an Armstrong number.")
+    except ValueError:
+        print("Please enter a valid integer.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+5. Write a Python Program to Find Armstrong Number in an Interval?
+
+
+def is_armstrong_number(num):
+    # Convert the number to a string to easily iterate over digits
+    str_num = str(num)
+    num_digits = len(str_num)  # Number of digits
+    sum_of_powers = sum(int(digit) ** num_digits for digit in str_num)  # Calculate sum of powers
+
+    return sum_of_powers == num  # Check if the sum equals the original number
+
+def find_armstrong_in_interval(start, end):
+    armstrong_numbers = []
+    for num in range(start, end + 1):
+        if is_armstrong_number(num):
+            armstrong_numbers.append(num)
+    return armstrong_numbers
+
+def main():
+    try:
+        # Get input from the user for the interval
+        start_interval = int(input("Enter the start of the interval: "))
+        end_interval = int(input("Enter the end of the interval: "))
+        
+        # Find Armstrong numbers in the specified interval
+        armstrong_numbers = find_armstrong_in_interval(start_interval, end_interval)
+        
+        # Print the results
+        if armstrong_numbers:
+            print(f"Armstrong numbers between {start_interval} and {end_interval}:")
+            print(armstrong_numbers)
+        else:
+            print(f"There are no Armstrong numbers between {start_interval} and {end_interval}.")
+    except ValueError:
+        print("Please enter valid integers.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+6. Write a Python Program to Find the Sum of Natural Numbers?
+
+def sum_of_natural_numbers(n):
+    # Use the formula for the sum of the first n natural numbers
+    return n * (n + 1) // 2
+
+def main():
+    try:
+        # Get input from the user
+        number = int(input("Enter a natural number: "))
+        
+        if number < 1:
+            print("Please enter a positive integer.")
+        else:
+            # Calculate the sum of natural numbers
+            result = sum_of_natural_numbers(number)
+            print(f"The sum of natural numbers up to {number} is: {result}")
+    except ValueError:
+        print("Please enter a valid integer.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+

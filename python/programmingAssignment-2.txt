@@ -1,0 +1,91 @@
+1. Write a Python program to convert kilometers to miles?
+
+miles = 1.60934
+km = int(input('Enter the Kilometeres:'))
+
+res= km/miles
+
+print("KM to Miles:",res)
+
+2. Write a Python program to convert Celsius to Fahrenheit?
+
+C = int(input('Enter the temperature:'))
+
+F = C*(1.8) + 32
+print(F)
+
+
+3. Write a Python program to display calendar?
+
+import calendar
+
+
+# Function to display the calendar for a specific month and year
+def display_calendar(year, month):
+    # Create a TextCalendar instance
+    cal = calendar.TextCalendar()
+    # Display the month for the given year
+    print(cal.formatmonth(year, month))
+
+
+# Main function
+def main():
+    # Get year and month from the user
+    year = int(input("Enter year (e.g., 2024): "))
+    month = int(input("Enter month (1-12): "))
+
+    # Validate the month input
+    if 1 <= month <= 12:
+        display_calendar(year, month)
+    else:
+        print("Invalid month. Please enter a month between 1 and 12.")
+
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+4. Write a Python program to solve quadratic equation?
+
+import cmath  # Importing cmath for complex number support
+
+def solve_quadratic(a, b, c):
+    # Calculate the discriminant
+    discriminant = (b**2) - (4*a*c)
+    
+    # Calculate two solutions using the quadratic formula
+    root1 = (-b + cmath.sqrt(discriminant)) / (2*a)
+    root2 = (-b - cmath.sqrt(discriminant)) / (2*a)
+    
+    return root1, root2
+
+def main():
+    # Get coefficients from the user
+    print("Quadratic Equation: ax^2 + bx + c = 0")
+    
+    a = float(input("Enter coefficient a: "))
+    b = float(input("Enter coefficient b: "))
+    c = float(input("Enter coefficient c: "))
+    
+    if a == 0:
+        print("Coefficient 'a' cannot be zero for a quadratic equation.")
+        return
+    
+    # Solve the quadratic equation
+    roots = solve_quadratic(a, b, c)
+    
+    print(f"The roots of the equation are: {roots[0]} and {roots[1]}")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+5. Write a Python program to swap two variables without temp variable?
+
+a= 10
+b= 20
+a,b = b,a
+print("a:",a)
+print("b:",b)
+

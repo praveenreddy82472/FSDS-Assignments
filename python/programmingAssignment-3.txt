@@ -1,0 +1,95 @@
+1. Write a Python Program to Check if a Number is Positive, Negative or Zero?
+
+def check_num(a):
+    if a > 0:
+        print('Positive Number')
+    elif a < 0:
+        print('Negative Number')
+    else:
+        print('Zero NUmber')
+A= int(input('Enter the number:'))
+check_num(A)
+
+
+2. Write a Python Program to Check if a Number is Odd or Even?
+
+def check_num(a):
+    even = []
+    odd = []
+    for i in range(a):
+        if i % 2==0:
+            even.append(i)
+        else:
+            odd.append(i)
+    print('Even Number:',even)
+    print('Odd Number:',odd)
+A= int(input('Enter the number:'))
+check_num(A)
+
+
+
+3. Write a Python Program to Check Leap Year?
+
+
+import calendar
+
+n = int(input('enter the number:'))
+res= calendar.isleap(n)
+print(res)
+
+4. Write a Python Program to Check Prime Number?
+
+def is_prime(n):
+    # Check if the number is less than 2
+    if n <= 1:
+        return False
+    # Check for factors from 2 to the square root of n
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def main():
+    try:
+        # Get input from the user
+        number = int(input("Enter a number: "))
+        # Check if the number is prime
+        if is_prime(number):
+            print(f"{number} is a prime number.")
+        else:
+            print(f"{number} is not a prime number.")
+    except ValueError:
+        print("Please enter a valid integer.")
+
+# Run the program
+if __name__ == "__main__":
+    main()
+
+
+
+5. Write a Python Program to Print all Prime Numbers in an Interval of 1-10000?
+
+
+def is_prime(n):
+    # Check if the number is less than 2
+    if n <= 1:
+        return False
+    # Check for factors from 2 to the square root of n
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def print_primes_in_range(start, end):
+    print(f"Prime numbers between {start} and {end} are:")
+    for num in range(start, end + 1):
+        if is_prime(num):
+            print(num, end=' ')
+    print()  # for a new line after printing all primes
+
+# Define the interval
+start_interval = 1
+end_interval = 10000
+
+# Run the function to print prime numbers in the defined range
+print_primes_in_range(start_interval, end_interval)
