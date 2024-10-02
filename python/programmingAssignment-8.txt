@@ -1,0 +1,87 @@
+1. Write a Python Program to Add Two Matrices?
+
+import numpy as np
+
+a=[[1,2],
+   [2,1]]
+
+b= [[2,3],
+    [3,2]]
+
+a1 = np.array(a)
+b1= np.array(b)
+res= np.add(a1,b1)
+
+print(res)
+
+
+2. Write a Python Program to Multiply Two Matrices?
+
+import numpy as np
+
+a=[[1,2],
+   [2,1]]
+
+b= [[2,3],
+    [3,2]]
+
+a1 = np.array(a)
+b1= np.array(b)
+res= np.multiply(a1,b1)
+
+print(res)
+
+
+3. Write a Python Program to Transpose a Matrix?
+
+
+import numpy as np
+
+matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+
+res= np.transpose(matrix)
+
+print(res)
+
+
+4. Write a Python Program to Sort Words in Alphabetic Order?
+
+def sort_words_alphabetically(sentence):
+    # Split the sentence into words
+    words = sentence.split()
+    # Sort the words
+    words.sort()
+    return words
+
+# Example usage:
+input_sentence = "Sorting words in alphabetic order is fun"
+sorted_words = sort_words_alphabetically(input_sentence)
+
+print("Original Sentence:")
+print(input_sentence)
+print("\nSorted Words:")
+print(sorted_words)
+
+5. Write a Python Program to Remove Punctuation From a String?
+
+
+import string
+
+def remove_punctuation(input_string):
+    # Create a translation table to remove punctuation
+    translator = str.maketrans('', '', string.punctuation)
+    # Use the translation table to replace punctuation with None
+    return input_string.translate(translator)
+
+# Example usage:
+input_string = "Hello, world! How's it going? (Hope you're doing well.)"
+cleaned_string = remove_punctuation(input_string)
+
+print("Original String:")
+print(input_string)
+print("\nString Without Punctuation:")
+print(cleaned_string)
+
+

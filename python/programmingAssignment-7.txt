@@ -1,0 +1,69 @@
+1. Write a Python Program to find sum of array?
+
+s= [10,20,30,40,50]
+res= 0
+for i in s:
+    res = res + i
+print(res)
+
+
+2. Write a Python Program to find largest element in an array?
+
+s= [10, 25, 33, 67, 44]
+s1= sorted(s)
+print(s1[-1])
+
+
+3. Write a Python Program for array rotation?
+
+def rotate_array(arr, n):
+    n = n % len(arr)  # In case n is larger than the array length
+    return arr[n:] + arr[:n]
+
+# Example usage:
+array = [1, 2, 3, 4, 5]
+rotations = 2  # Number of positions to rotate
+result = rotate_array(array, rotations)
+print(f"Array after {rotations} rotations: {result}")
+
+
+
+4. Write a Python Program to Split the array and add the first part to the end?
+
+def split_and_add(arr, split_index):
+    # Split the array into two parts and concatenate them in reversed order
+    return arr[split_index:] + arr[:split_index]
+
+# Example usage:
+array = [1, 2, 3, 4, 5, 6]
+split_index = 3  # Split the array after the 3rd element
+result = split_and_add(array, split_index)
+print(f"Array after splitting and adding the first part to the end: {result}")
+
+
+5. Write a Python Program to check if given array is Monotonic?
+
+def is_monotonic(arr):
+    if len(arr) <= 1:
+        return True  # An array with 0 or 1 element is trivially monotonic
+
+    increasing = decreasing = True
+
+    for i in range(1, len(arr)):
+        if arr[i] > arr[i - 1]:
+            decreasing = False
+        if arr[i] < arr[i - 1]:
+            increasing = False
+
+    return increasing or decreasing
+
+# Example usage:
+array1 = [1, 2, 2, 3]
+array2 = [6, 5, 4, 4]
+array3 = [1, 3, 2]
+
+print(f"Is array1 monotonic? {is_monotonic(array1)}")
+print(f"Is array2 monotonic? {is_monotonic(array2)}")
+print(f"Is array3 monotonic? {is_monotonic(array3)}")
+
+

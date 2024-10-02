@@ -1,0 +1,136 @@
+1. Write a Python program to Extract Unique values dictionary values?
+
+# Sample dictionary
+sample_dict = {
+    'a': [1, 2, 3],
+    'b': [2, 4, 6],
+    'c': [1, 4, 5],
+    'd': [6, 7, 8]
+}
+
+# Function to extract unique values from dictionary values
+def extract_unique_values(input_dict):
+    unique_values = set()
+    
+    # Iterate through dictionary values
+    for value_list in input_dict.values():
+        # Add elements to the set (duplicates are ignored)
+        unique_values.update(value_list)
+    
+    return list(unique_values)
+
+# Extract unique values
+unique_values = extract_unique_values(sample_dict)
+
+# Print the result
+print(f"Unique values: {unique_values}")
+
+
+2. Write a Python program to find the sum of all items in a dictionary?
+
+sample_dict = {
+    'a': [1, 2, 3],
+    'b': [2, 4, 6],
+    'c': [1, 4, 5],
+    'd': [6, 7, 8]
+}
+
+# Initialize the sum
+total_sum = 0
+
+# Iterate through the values in the dictionary
+for i in sample_dict.values():
+    # Iterate through each list in the dictionary values
+    for j in i:
+        total_sum += j  # Add each item to the total sum
+
+# Print the total sum
+print(total_sum)
+
+
+3. Write a Python program to Merging two Dictionaries?
+
+dict1 = {1: 'Praveen', 2: 'Prudhvi'}
+dict2 = {3: 'Swarup', 4: 'Mani'}
+
+# Create a copy of dict1 to avoid modifying the original dict
+res = dict1.copy()
+res.update(dict2)  # Merge dict2 into the copied dict1
+
+print(res)
+
+4. Write a Python program to convert key-values list to flat dictionary?
+
+# Example key-value pairs
+key_value_list = [['a', 1], ['b', 2], ['c', 3], ['d', 4]]
+
+# Convert to flat dictionary using dictionary comprehension
+flat_dict = {key: value for key, value in key_value_list}
+
+print(flat_dict)
+
+
+5. Write a Python program to insertion at the beginning in OrderedDict?
+
+from collections import OrderedDict
+
+# Create an OrderedDict
+ordered_dict = OrderedDict()
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+# Insertion at the beginning
+# Create a new OrderedDict with the new item first
+new_item = ('a', 1)
+ordered_dict = OrderedDict([new_item] + list(ordered_dict.items()))
+
+print(ordered_dict)
+
+
+
+6. Write a Python program to check order of character in string using OrderedDict()?
+
+from collections import OrderedDict
+
+def check_order(string, pattern):
+    # Create an OrderedDict to store characters in the order they appear
+    char_order = OrderedDict.fromkeys(string)
+
+    # Check if all characters of the pattern are in the string in the correct order
+    pattern_index = 0
+    for char in char_order:
+        if pattern_index < len(pattern) and char == pattern[pattern_index]:
+            pattern_index += 1
+            
+    # If pattern_index matches the length of pattern, it means order is preserved
+    return pattern_index == len(pattern)
+
+# Example usage
+string = "engineers"
+pattern = "gin"
+
+if check_order(string, pattern):
+    print(f"The order of characters '{pattern}' is correct in the string '{string}'.")
+else:
+    print(f"The order of characters '{pattern}' is NOT correct in the string '{string}'.")
+
+
+7. Write a Python program to sort Python Dictionaries by Key or Value?
+
+# Sample dictionary
+sample_dict = {'b': 2, 'a': 1, 'd': 4, 'c': 3}
+
+# Sort the dictionary by key
+sorted_by_key = dict(sorted(sample_dict.items()))
+
+print("Sorted by key:", sorted_by_key)
+
+
+# Sample dictionary
+sample_dict = {'b': 2, 'a': 1, 'd': 4, 'c': 3}
+
+# Sort the dictionary by value
+sorted_by_value = dict(sorted(sample_dict.items(), key=lambda item: item[1]))
+
+print("Sorted by value:", sorted_by_value)
+

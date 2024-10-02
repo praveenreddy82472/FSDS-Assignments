@@ -1,0 +1,122 @@
+1. Write a Python program to check if the given number is a Disarium Number?
+
+
+def is_disarium(number):
+    # Convert the number to a string to iterate through digits
+    digits = str(number)
+    # Calculate the sum of digits raised to the power of their positions
+    sum_of_powers = sum(int(digit) ** (index + 1) for index, digit in enumerate(digits))
+
+    # Check if the sum equals the original number
+    return sum_of_powers == number
+
+
+# Example usage
+input_number = int(input("Enter a number: "))
+if is_disarium(input_number):
+    print(f"{input_number} is a Disarium Number.")
+else:
+    print(f"{input_number} is not a Disarium Number.")
+
+
+2. Write a Python program to print all disarium numbers between 1 to 100?
+
+def is_disarium(number):
+    # Convert the number to a string to iterate through digits
+    digits = str(number)
+    # Calculate the sum of digits raised to the power of their positions
+    sum_of_powers = sum(int(digit) ** (index + 1) for index, digit in enumerate(digits))
+
+    # Check if the sum equals the original number
+    return sum_of_powers == number
+
+
+# Print all Disarium numbers between 1 and 100
+print("Disarium numbers between 1 and 100:")
+for num in range(1, 101):
+    if is_disarium(num):
+        print(num)
+
+3. Write a Python program to check if the given number is Happy Number?
+
+
+def is_happy(number):
+    seen_numbers = set()  # To keep track of numbers we've seen
+
+    while number != 1:
+        # Calculate the sum of the squares of the digits
+        number = sum(int(digit) ** 2 for digit in str(number))
+        
+        # Check for cycles
+        if number in seen_numbers:
+            return False  # It's not a happy number
+        seen_numbers.add(number)  # Add the current number to the set
+
+    return True  # It's a happy number
+
+# Example usage
+input_number = int(input("Enter a number: "))
+if is_happy(input_number):
+    print(f"{input_number} is a Happy Number.")
+else:
+    print(f"{input_number} is not a Happy Number.")
+
+4. Write a Python program to print all happy numbers between 1 and 100?
+
+def is_happy(number):
+    seen_numbers = set()  # To keep track of numbers we've seen
+
+    while number != 1:
+        # Calculate the sum of the squares of the digits
+        number = sum(int(digit) ** 2 for digit in str(number))
+
+        # Check for cycles
+        if number in seen_numbers:
+            return False  # It's not a happy number
+        seen_numbers.add(number)  # Add the current number to the set
+
+    return True  # It's a happy number
+
+
+print("Happy numbers between 1 and 100:")
+for num in range(1, 101):
+    if is_happy(num):
+        print(f"{num} is a Happy Number.")
+    else:
+        print(f"{num} is not a Happy Number.")
+
+    print(f"{input_number} is not a Happy Number.")
+
+
+5. Write a Python program to determine whether the given number is a Harshad Number?
+
+def is_harshad(number):
+    # Calculate the sum of the digits
+    digit_sum = sum(int(digit) for digit in str(number))
+    
+    # Check if the number is divisible by the sum of its digits
+    return number % digit_sum == 0
+
+# Example usage
+input_number = int(input("Enter a number: "))
+if is_harshad(input_number):
+    print(f"{input_number} is a Harshad Number.")
+else:
+    print(f"{input_number} is not a Harshad Number.")
+
+
+6. Write a Python program to print all pronic numbers between 1 and 100?
+
+
+def is_pronic(n):
+    # Check if n is a pronic number
+    for i in range(int(n**0.5) + 1):
+        if i * (i + 1) == n:
+            return True
+    return False
+
+# Print all pronic numbers between 1 and 100
+print("Pronic numbers between 1 and 100:")
+for num in range(1, 101):
+    if is_pronic(num):
+        print(num)
