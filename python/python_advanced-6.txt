@@ -1,0 +1,107 @@
+Q1. Describe three applications for exception processing.
+
+Exception processing is crucial in programming for handling errors gracefully. Here are three applications:
+
+Error Logging: When an unexpected error occurs, logging it helps in diagnosing issues later. For example, in a web application, if a database connection fails, logging the exception can provide insights for troubleshooting.
+
+User Feedback: Providing meaningful error messages enhances user experience. For instance, if a user inputs invalid data in a form, catching the exception allows the application to inform the user about the specific error, like "Please enter a valid email address."
+
+Resource Management: Exception handling ensures proper resource cleanup. For example, if a file is opened and an error occurs while processing it, using a try-finally block can guarantee that the file is closed, preventing resource leaks.
+
+Q2. What happens if you don't do something extra to treat an exception?
+
+if exceptions are not handled properly in a program, several issues can arise:
+
+Program Crashes: Unhandled exceptions can cause the application to terminate abruptly. For example, if a program tries to divide by zero without catching the exception, it will crash, leading to a poor user experience.
+
+Data Corruption: In scenarios involving file operations or database transactions, unhandled exceptions may lead to incomplete or corrupted data. For instance, if a program fails to write data to a database due to an exception and doesn’t roll back the transaction, it can leave the database in an inconsistent state.
+
+Security Vulnerabilities: Lack of proper exception handling can expose sensitive information to users or attackers. For instance, displaying raw error messages might reveal stack traces or other sensitive data, which can be exploited for malicious purposes.
+
+Increased Debugging Difficulty: When exceptions are not handled, it becomes more challenging to identify and debug issues. Unhandled exceptions may generate vague error messages, making it difficult for developers to trace the root cause of problems.
+
+In summary, failing to treat exceptions can lead to instability, data integrity issues, security risks, and increased maintenance costs for software applications. Proper exception handling is essential for creating robust and user-friendly applications.
+
+Q3. What are your options for recovering from an exception in your script?
+
+
+When recovering from an exception in a script, you have several options to handle the situation gracefully:
+
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero. Please provide a valid divisor.")
+
+
+
+try:
+    file = open('data.txt', 'r')
+    # Process the file
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()  # Ensure the file is closed
+
+
+try:
+    # Some risky operation
+except SomeError as e:
+    print("An error occurred:", e)
+    raise  # Re-raise the original exception
+
+
+def safe_divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return None  # Return None instead of raising an exception
+
+Q4. Describe two methods for triggering exceptions in your script.
+
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    return age
+
+try:
+    validate_age(-5)  # This will raise a ValueError
+except ValueError as e:
+    print("Error:", e)
+
+______
+
+def divide(x, y):
+    assert y != 0, "The denominator cannot be zero."  # This will trigger an AssertionError if y is 0
+    return x / y
+
+try:
+    result = divide(10, 0)  # This will raise an AssertionError
+except AssertionError as e:
+    print("Error:", e)
+
+
+
+Q5. Identify two methods for specifying actions to be executed at termination time, regardless of
+whether or not an exception exists.
+
+def read_file(file_name):
+    file = None
+    try:
+        file = open(file_name, 'r')
+        # Process the file
+        data = file.read()
+        print(data)
+    finally:
+        if file:
+            file.close()  # Ensures the file is closed regardless of success or failure
+
+read_file('example.txt')
+
+
+________
+
+
+with open('example.txt', 'r') as file:  # Automatically handles opening and closing the file
+    data = file.read()
+    print(data)
+# No need for explicit cleanup; the file is closed automatically

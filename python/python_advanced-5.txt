@@ -1,0 +1,123 @@
+Q1. What is the meaning of multiple inheritance?
+
+Multiple inheritance is a feature in object-oriented programming (OOP) where a class can inherit properties and behaviors (methods) from more than one parent class. This allows the child class (or subclass) to combine the features of multiple parent classes, promoting code reuse and flexibility.
+
+class Parent1:
+    def method1(self):
+        print("Method from Parent1")
+
+class Parent2:
+    def method2(self):
+        print("Method from Parent2")
+
+class Child(Parent1, Parent2):
+    def method3(self):
+        print("Method from Child")
+
+# Creating an instance of Child
+child = Child()
+child.method1()  # Inherited from Parent1
+child.method2()  # Inherited from Parent2
+child.method3()  # Own method
+
+
+
+Q2. What is the concept of delegation?
+
+Delegation is a programming concept where an object hands over (or delegates) some of its responsibilities or behavior to another object. This allows for greater flexibility and promotes the reuse of code. In essence, delegation is a way to achieve composition over inheritance, which helps in creating more modular and maintainable code.
+
+class Printer:
+    def print_document(self, document):
+        print(f"Printing document: {document}")
+
+class Office:
+    def __init__(self):
+        self.printer = Printer()  # Delegating to Printer class
+
+    def print_report(self, report):
+        # Delegates the printing responsibility to the Printer object
+        self.printer.print_document(report)
+
+# Creating an instance of Office
+office = Office()
+office.print_report("Annual Financial Report")  # Output: Printing document: Annual Financial Report
+
+
+
+Q3. What is the concept of composition?
+
+Composition is a fundamental concept in object-oriented programming that refers to the design principle where a class is composed of one or more objects from other classes, allowing for complex behaviors by combining simpler, reusable components. This approach promotes code reuse and enhances maintainability.
+
+class Engine:
+    def start(self):
+        print("Engine started")
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()  # Car "has-a" Engine
+
+    def start(self):
+        self.engine.start()  # Delegating the start functionality to the Engine
+
+# Creating an instance of Car
+my_car = Car()
+my_car.start()  # Output: Engine started
+
+
+
+
+Q4. What are bound methods and how do we use them?
+
+Bound methods are methods that are associated with an instance of a class. They are called "bound" because they are bound to the specific object instance, meaning that when you call a bound method, the instance (the self reference) is automatically passed to it.
+
+class Dog:
+    def __init__(self, name):
+        self.name = name  # Instance attribute
+
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+# Creating an instance of Dog
+my_dog = Dog("Buddy")
+
+# Accessing the bound method
+bark_method = my_dog.bark
+
+# Calling the bound method
+print(bark_method())  # Output: Buddy says Woof!
+
+
+
+Q5. What is the purpose of pseudoprivate attributes?
+
+Pseudoprivate attributes in Python are a naming convention used to indicate that certain attributes of a class are intended for internal use only. They are not truly private (as Python does not have strict access modifiers), but the naming convention discourages external access.
+
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner       # Public attribute
+        self._balance = balance  # Pseudoprivate attribute
+
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited: {amount}")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self._balance:
+            self._balance -= amount
+            print(f"Withdrew: {amount}")
+        else:
+            print("Insufficient funds.")
+
+    def get_balance(self):
+        return self._balance
+
+# Usage
+account = BankAccount("Alice", 1000)
+account.deposit(500)
+print(account.get_balance())  # Output: 1500
+
+# Accessing the pseudoprivate attribute (not recommended)
+print(account._balance)  # Output: 1500 (but should be avoided)
+
+

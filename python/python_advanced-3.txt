@@ -1,0 +1,87 @@
+1. What is the concept of an abstract superclass?
+
+An abstract superclass is a class that cannot be instantiated on its own and typically contains one or more methods without implementations, known as abstract methods. These abstract methods define a set of behaviors that any subclass (child class) must implement. The purpose of the abstract superclass is to provide a common interface or template for its subclasses, ensuring that they all follow a specific structure and implement the required functionalities.
+
+In summary, the abstract superclass lays out the foundation by declaring methods without providing their implementation. The child classes that inherit from the abstract superclass are then responsible for implementing these abstract methods, allowing for customization and specific behavior according to the needs of each subclass. This promotes a clear design and enforces consistency across related classes.
+
+
+2. What happens when a class statement's top level contains a basic assignment statement?
+
+An assignment statement at the top level of a class creates a class attribute that is shared among all instances of that class.
+class MyClass:
+    class_attribute = 10  # Class attribute
+
+    def __init__(self, value):
+        self.instance_attribute = value  # Instance attribute
+
+
+3. Why does a class need to manually call a superclass's __init__ method?
+
+A class needs to manually call a superclass's __init__ method to ensure that the initialization logic defined in the superclass is executed when creating an instance of the subclass. This is important for several reasons:
+
+Initialization of Instance Variables: The __init__ method in the superclass often initializes instance variables that are necessary for the proper functioning of the class. By calling this method, the subclass ensures that those variables are set up correctly.
+
+Accessing Superclass Properties: If the superclass has specific properties or behaviors defined in its __init__, the subclass needs to call it to inherit and utilize those properties throughout its methods. This allows for consistent and expected behavior across all instances.
+
+Code Reusability: Calling the superclass's __init__ method promotes code reuse. Instead of rewriting the initialization logic, the subclass can leverage the existing code in the superclass.
+
+Complex Hierarchies: In cases of complex inheritance hierarchies, failing to call the superclass's __init__ can lead to bugs, as certain initialization steps may be skipped.
+
+class Parent:
+    def __init__(self, name):
+        self.name = name
+
+class Child(Parent):
+    def __init__(self, name, age):
+        super().__init__(name)  # Call to Parent's __init__
+        self.age = age
+
+# Usage
+child_instance = Child("Alice", 10)
+print(child_instance.name)  # Outputs: Alice
+print(child_instance.age)   # Outputs: 10
+
+
+
+4. How can you augment, instead of completely replacing, an inherited method?
+
+class Animal:
+    def speak(self):
+        return "The animal makes a sound."
+
+class Dog(Animal):
+    def speak(self):
+        # Call the inherited method
+        sound = super().speak()
+        # Augment the behavior
+        return f"{sound} Woof! Woof!"
+
+# Usage
+dog = Dog()
+print(dog.speak())  # Outputs: The animal makes a sound. Woof! Woof!
+
+
+
+5. How is the local scope of a class different from that of a function?
+
+
+def my_function():
+    x = 10  # Local variable
+    print(x)
+
+my_function()  # Outputs: 10
+print(x)  # Raises NameError: name 'x' is not defined
+
+
+
+class MyClass:
+    class_variable = 20  # Class attribute
+
+    def my_method(self):
+        instance_variable = 30  # Local variable
+        print(instance_variable)
+
+obj = MyClass()
+obj.my_method()  # Outputs: 30
+print(MyClass.class_variable)  # Outputs: 20
+

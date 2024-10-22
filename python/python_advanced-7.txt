@@ -1,0 +1,82 @@
+Q1. What is the purpose of the try statement?
+
+The purpose of the try statement in Python is to allow developers to handle exceptions gracefully. It enables you to write code that may potentially raise an exception within a block, while providing a way to catch and manage those exceptions instead of allowing the program to crash.
+
+try:
+    result = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+
+
+
+Q2. What are the two most popular try statement variations?
+
+try:
+    result = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+
+______
+
+try:
+    file = open('example.txt', 'r')
+    content = file.read()
+except FileNotFoundError:
+    print("Error: File not found.")
+finally:
+    if 'file' in locals():
+        file.close()  # Ensure the file is closed whether an exception occurred or not
+
+
+Q3. What is the purpose of the raise statement?
+
+
+
+The raise statement in Python is used to trigger an exception explicitly. Its primary purposes include:
+
+Creating Custom Exceptions: You can raise your own exceptions to indicate specific error conditions that may not be covered by built-in exceptions. This allows for better error handling and clearer signaling of issues in your code.
+
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    return True
+
+try:
+    validate_age(-5)
+except ValueError as e:
+    print(f"Error: {e}")
+
+Re-raising Exceptions: You can use raise within an except block to re-raise the caught exception, allowing it to propagate up the call stack. This is useful when you want to perform some logging or cleanup while still passing the exception along for further handling.
+
+try:
+    result = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+    raise ""
+
+
+Q4. What does the assert statement do, and what other statement is it like?
+
+
+The assert statement in Python is used to perform a debugging check by testing a condition. If the condition evaluates to True, the program continues execution without any interruption. If it evaluates to False, an AssertionError is raised, which can help identify issues during development.
+
+def calculate_square_root(x):
+    assert x >= 0, "Cannot calculate square root of negative number."
+    return x ** 0.5
+
+print(calculate_square_root(25))  # This works fine
+print(calculate_square_root(-4))   # This raises an AssertionError
+
+
+Q5. What is the purpose of the with/as argument, and what other statement is it like?
+
+The with statement in Python is used to wrap the execution of a block of code within methods defined by a context manager. The primary purpose of using with is to ensure that resources are properly managed, particularly when dealing with tasks that involve setup and teardown actions, such as file operations or network connections.
+
+with open('example.txt', 'r') as file:
+    content = file.read()
+# The file is automatically closed after the block execution
